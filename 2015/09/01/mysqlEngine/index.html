@@ -1,0 +1,178 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">MySql Engine</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-09-01T05:19:31.000Z" itemprop="datePublished">
+        2015-09-01
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <p>###什么是存储引擎<br>Mysql使用不同的技术存储数据，这些不同的技术被称为存储引擎，查看自己的mysql服务器可用的引擎命令：<strong><em>show engines</em></strong><br><img src="../../../../images/mysqlengine.png" alt="show Engines查询结果"><br>其中，InnoDB和MyISAM为常用的两种存储引擎。</p>
+<p>###设置存储引擎的方式如下：<br>1、mysql的配置文件中设置默认存储引擎，默认是MyISAM<br>2、启动mysql服务器时在命令行后边加上–default-storage -engine或–default-table-type<br>3、创建表时指定：在create table 后边加上engine=InnoDB<br>4、更改表的存储引擎：ALTER TABLE mytable ENGINE = MyISAM</p>
+<p>###存储引擎的区别<br>MyISAM不支持事务，支持全文索引，只支持表锁、select相对快、缓存索引文件。<br>InnoDB支持事务，不支持全文索引，支持表锁、行锁（where是主键时有效）、insert、update、delete时相对快、缓存数据和索引。<br>1、InnoDB 中不保存表的具体行数，也就是说，执行select count(<em>) from table时，InnoDB要扫描一遍整个表来计算有多少行，但是MyISAM只要简单的读出保存好的行数即可。注意的是，当count(</em>)语句包含 where条件时，两种表的操作是一样的。<br>2、对于AUTO_INCREMENT类型的字段，InnoDB中必须包含只有该字段的索引，但是在MyISAM表中，可以和其他字段一起建立联合索引。<br>3、DELETE FROM table时，InnoDB不会重新建立表，而是一行一行的删除。<br>4、大批的inserts 语句在MyISAM下会快一些，但是updates 在InnoDB 下会更快一些——尤其在并发量大的时候。<br><a href="http://www.cnblogs.com/youxin/p/3359132.html" target="_blank" rel="external">参考</a></p>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2015/08/06/CSS/">
+        ← CSS小Tips
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2015/09/07/git命令/">
+        git命令 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/09/01/mysqlEngine/" data-title="MySql Engine" data-url="http://thinkdo.github.io/2015/09/01/mysqlEngine/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

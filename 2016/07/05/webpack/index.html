@@ -1,0 +1,180 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">webpack+react</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2016-07-05T02:47:52.000Z" itemprop="datePublished">
+        2016-07-05
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <p>原项目背景：后端采用java开发，前端采用react+es5。jsx语法是线下通过babel-preset-react转化为普通的js文件。然后在html页面中引入转换后的js文件。<br>改造目标：通过webpack自动构建前端，组件均采用es6语法。<br>过程如下：</p>
+<p><font color="#0099ff" size="5" face="黑体">一、加载需要用到的依赖包</font><br>1、我们需要使用npm管理依赖包，如果之前没有初始化npm，请在终端输入<em>npm init</em>命令，初始化后会生成一个package.json文件，如下。如果之前已经存在该文件，则对文件进行更改,增加对应依赖包。<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  "name": "cuican",</div><div class="line">  "version": "1.0.0",</div><div class="line">  "description": "cuican",</div><div class="line">  "main": "index.js",</div><div class="line">  "scripts": &#123;</div><div class="line">    //此处设置了npm脚本命令，通过在终端执行 npm start 就可以启动webpack-dev-server了，</div><div class="line">    //webpack-dev-server是一个开发辅助工具，只需ctrl+s后即可在浏览器看到最新效果，不用</div><div class="line">    //刷新也不用重构建</div><div class="line">    "start": "webpack-dev-server --hot --inline --progress --colors",</div><div class="line">    // 通过webpack构建命令进行构建，生成最终文件</div><div class="line">    "build": "webpack --progress --colors",</div><div class="line">    //set NODE_ENV=production用于区分生产环境和测试环境，可以在webpack.config.js中根</div><div class="line">    //据此变量写一些测试代码</div><div class="line">    "publish-win": "set NODE_ENV=production&amp;&amp;webpack -p --progress --colors"</div><div class="line">  &#125;,</div><div class="line">  "author": "cuican",</div><div class="line">  "license": "ISC",</div><div class="line">  "devDependencies": &#123;</div><div class="line">    //babel用于将es6转换为es6、将jsx语法解析为js</div><div class="line">    "babel-core": "^6.10.4",</div><div class="line">    "babel-loader": "^6.2.4",</div><div class="line">    "babel-polyfill": "^6.9.1",</div><div class="line">    "babel-preset-es2015": "^6.9.0",</div><div class="line">    "babel-preset-react": "^6.11.1",</div><div class="line">    //用于在js文件中加载css</div><div class="line">    "css-loader": "^0.23.1",</div><div class="line">    //分离css，将css单独加载</div><div class="line">    "extract-text-webpack-plugin": "^1.0.1",</div><div class="line">    "file-loader": "^0.9.0",</div><div class="line">    "fs": "0.0.2",</div><div class="line">    "glob": "^7.0.5",</div><div class="line">    //自动根据模板生成html文件</div><div class="line">    "html-webpack-plugin": "^2.22.0",</div><div class="line">    "path": "^0.12.7",</div><div class="line">    "react": "^15.1.0",</div><div class="line">    "react-dom": "^15.1.0",</div><div class="line">    "react-hot-loader": "^1.3.0",</div><div class="line">    "style-loader": "^0.13.1",</div><div class="line">    "url-loader": "^0.5.7",</div><div class="line">    "webpack": "^1.13.1",</div><div class="line">    "webpack-dev-server": "^1.14.1"</div><div class="line">  &#125;,</div><div class="line">  "dependencies": &#123;</div><div class="line">    "jquery": "^2.2.2",</div><div class="line">    "react": "^15.1.0",</div><div class="line">    "react-dom": "^15.1.0",</div><div class="line">    "react-redux": "^4.4.5",</div><div class="line">    "redux": "^3.5.2"</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2、使用命令<em>npm install</em>安装所有依赖包。<br>windows下如果安装babel-preset-es2015的时候报错为：某某文件exists，这时候有可能是node的版本过低，需在官网下载最新版本的node并安装。<br>3、webpack和webpack-dev-server除了安装在本地项目下外，还需安装到全局中，这样才能使用webpack命令。执行命令<strong>npm install webpack-dev-server –global</strong>和<strong>npm install webpack –global</strong>进行安装</p>
+<p><font color="#0099ff" size="5" face="黑体">二、配置webpack.config.js</font><br>在项目的根目录下手动新建一个webpack.config.js文件，内容配置如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">var</span> glob = <span class="built_in">require</span>(<span class="string">'glob'</span>);</div><div class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</div><div class="line"><span class="keyword">const</span> debug = process.env.NODE_ENV !== <span class="string">'production'</span>;</div><div class="line"><span class="comment">//如果css文件很大，不想构建到入口文件中，则使用extract-text-webpack-plugin进行单独加载</span></div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">entries</span> (<span class="params">globPath</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> files = glob.sync(globPath);</div><div class="line">    <span class="keyword">var</span> entries = &#123;&#125;, entry, basename;</div><div class="line"></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; files.length; i++) &#123;</div><div class="line">        entry = files[i];</div><div class="line">        basename = path.basename(entry, <span class="string">'.js'</span>);</div><div class="line">        entries[basename] = <span class="string">'./'</span> + entry;</div><div class="line">    &#125;</div><div class="line">    entries[<span class="string">'react'</span>]= [<span class="string">'React'</span>];</div><div class="line">    entries[<span class="string">'react-dom'</span>]= [<span class="string">'React-dom'</span>];</div><div class="line">    entries[<span class="string">'jquery'</span>]= [<span class="string">'jquery'</span>];</div><div class="line">    <span class="keyword">return</span> entries;</div><div class="line">&#125;</div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    <span class="comment">//加载所有入口文件，这里实现了根据目录自动读取entryJs下的所有文件，react、jquery文件太大，所以要单独加载，不构建到入口文件中</span></div><div class="line">    entry: entries(<span class="string">'component/src/entryJs/*.js'</span>),</div><div class="line">    <span class="attr">output</span>: &#123;</div><div class="line">        <span class="comment">//入口文件的最终输出目录</span></div><div class="line">        path: path.join(__dirname,<span class="string">'component'</span>,<span class="string">'build'</span>),</div><div class="line">        <span class="attr">filename</span>: <span class="string">'[name]'</span>  + (debug ? <span class="string">''</span> : <span class="string">'-[chunkhash]'</span>) + <span class="string">'.js'</span>,</div><div class="line">        <span class="attr">chunkFilename</span>: <span class="string">'[id]'</span> + (debug ? <span class="string">''</span> : <span class="string">'-[chunkhash]'</span>) + <span class="string">'.js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">module</span>: &#123;</div><div class="line">        <span class="comment">//加载各种文件的loader，不同类型的文件用不同的loader进行解析转换</span></div><div class="line">        loaders: [</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.js?$/</span>, <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span>, <span class="attr">loaders</span>: [<span class="string">'react-hot'</span>, <span class="string">'babel-loader'</span>]&#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.js$/</span>, <span class="attr">exclude</span>: <span class="regexp">/node_modules/</span>, <span class="attr">loader</span>: <span class="string">'babel-loader'</span>&#125;,</div><div class="line">            &#123; <span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>: ExtractTextPlugin.extract(<span class="string">"style-loader"</span>, <span class="string">"css-loader"</span>)&#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=50000&amp;name=[path][name].[ext]'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">resolve</span>:&#123;</div><div class="line">        <span class="attr">extensions</span>:[<span class="string">''</span>,<span class="string">'.js'</span>,<span class="string">'.json'</span>]</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">plugins</span>: [</div><div class="line">        <span class="keyword">new</span> webpack.NoErrorsPlugin(),</div><div class="line">        <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"page.css"</span>),</div><div class="line">        <span class="keyword">new</span> webpack.DefinePlugin(&#123;</div><div class="line">            <span class="string">'process.env.NODE_ENV'</span>: <span class="string">'"development"'</span></div><div class="line">        &#125;),</div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            <span class="attr">name</span>: [<span class="string">'react'</span>, <span class="string">'react-dom'</span>,<span class="string">'jquery'</span>],</div><div class="line">            <span class="attr">minChunks</span>: <span class="literal">Infinity</span></div><div class="line">        &#125;),<span class="comment">/*</span></div><div class="line">        new HtmlWebpackPlugin(&#123;</div><div class="line">            title: 'test',</div><div class="line">            filename: path.join(__dirname,'html','search.html'),</div><div class="line">            inject: 'body',</div><div class="line">            template:  path.join(__dirname,'template.html'), // Load a custom template</div><div class="line">            chunks: ['react','react-dom','jquery','bindNumber']</div><div class="line">        &#125;)*/</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p><font color="#0099ff" size="5" face="黑体">三、将组件改写为es6风格</font><br>1、以前是在html中引入要用到的组件，这里改为在js中通过import引入组件模块。语法为<strong>import defaultMethod, { otherMethod }  from ‘某某组件名字’</strong>。比如下边的弹出框组件依赖react，则写为import React from ‘react’。<br>2、类创建采用<strong>class 组件名称 extends React.Component{}</strong>，如果需要将该组件导出在需要导出的类、方法、变量前加入export,一个模块内只能有一个export default，用default导出的不需要通过大括号进行import。<br>3、用构造器constructor代替getInitialState，并需在构造函数内写入super(props)<br>4、当使用 React.createClass 来定义组件时，React 允许你随意在此组件的类中定义方法，而在方法中调用的 this 会自动绑定到组件自身，但对于es6的类 来说，自动绑定并不适用。es6使用箭头函数<strong>=&gt;</strong>自动绑定this关键字，语法<strong>param =&gt; expression</strong>，<strong>([param] [, param]) =&gt; { statements}</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React, &#123; Component, PropTypes &#125; <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="class"><span class="keyword">class</span> <span class="title">AlertBoxComponent</span> <span class="keyword">extends</span> <span class="title">Component</span></span>&#123;</div><div class="line">	<span class="keyword">constructor</span>(props)&#123;</div><div class="line">	    <span class="keyword">super</span>(props);</div><div class="line">	&#125;</div><div class="line">	render()&#123;</div><div class="line">		<span class="keyword">return</span> (</div><div class="line">			<span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;this.props.unShow?</span>'<span class="attr">undis</span>'<span class="attr">:</span>'<span class="attr">dis</span>'&#125;&gt;</span></span></div><div class="line">				<span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">'dialogMask'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">section</span> <span class="attr">className</span>=<span class="string">'dialog'</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">p</span> <span class="attr">className</span>=<span class="string">"info-notice"</span>&gt;</span>&#123;this.props.content&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">					<span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"close-btn"</span>&gt;</span></div><div class="line">						<span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123; this.props.handleAlertCloseButton() &#125;&#125;&gt;关闭<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">					<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">				<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">AlertBoxComponent.propTypes = &#123;</div><div class="line">	<span class="attr">handleAlertCloseButton</span>: PropTypes.func.isRequired</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/06/30/httpDeeper/">
+        ← 一、http详细理解
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/07/10/react-redux/">
+        用react-redux改造弹框组件 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/07/05/webpack/" data-title="webpack+react" data-url="http://thinkdo.github.io/2016/07/05/webpack/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

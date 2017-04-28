@@ -1,0 +1,195 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">总结一点高性能架构的知识</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-04-16T07:46:33.000Z" itemprop="datePublished">
+        2015-04-16
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <h4 id="一、数据库访问性能优化"><a href="#一、数据库访问性能优化" class="headerlink" title="一、数据库访问性能优化"></a>一、数据库访问性能优化</h4><ul>
+<li>对数据库表进行水平分割：按照某些条件将数据进行分类，放置在不同表中。如按年分表、按地区分表等</li>
+<li>对数据库表进行垂直分割：将常用字段和不常用字段分两个表存储</li>
+<li>对数据库表进行分区</li>
+<li>采用有负载能力的集群</li>
+<li>适当使用簇表（<a href="http://www.cnblogs.com/feiyun126/archive/2013/06/28/3161127.html" target="_blank" rel="external">散列聚簇表</a>，索引聚簇表）、Hit提示</li>
+<li>升级硬件（CPU、内存、高速磁盘、固态硬盘）</li>
+</ul>
+<h4 id="二、高负载高并发网站性能优化"><a href="#二、高负载高并发网站性能优化" class="headerlink" title="二、高负载高并发网站性能优化"></a>二、高负载高并发网站性能优化</h4><ul>
+<li>高性能服务器（硬件）</li>
+<li>高性能数据库</li>
+<li>高效编程语言</li>
+<li>高性能web容器</li>
+<li>HTML静态化：对于新闻、博客、论坛类网站，需要长期保存某些久不更新的网页，这种时候就可以将网页静态化，或者半静态化，即定期动态生成静态化网页并保存静态页面至缓存中，让静态页面分担一部分访问压力。推荐nginx服务器，因其占用系统资源小，可用来处理静态文件的大量请求。</li>
+<li>图片服务器分离：图片单独放置在图片服务器上。推荐lighttpd，因其轻量级且处理并发高效。</li>
+<li>数据库集群：如Mysql的master-slave</li>
+<li>缓存：Apache的mod_proxy或squid；memcached</li>
+<li>镜像</li>
+<li>负载均衡</li>
+</ul>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2015/04/15/choice/">
+        ← 为“什么”而选择？
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2015/06/14/XmlToJavaBean/">
+        两种XML转JavaBean的方式 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/04/16/systemBuild/" data-title="总结一点高性能架构的知识" data-url="http://thinkdo.github.io/2015/04/16/systemBuild/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

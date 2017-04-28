@@ -1,0 +1,343 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  <div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Index </h1>
+
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/06/14/XmlToJavaBean/">两种XML转JavaBean的方式</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-06-14T10:25:18.000Z" itemprop="datePublished">
+        2015-06-14
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        系统间的数据交互很多都是通过xml格式传输的，如果对方系统不提供解析报文的jar包，开发人员就需要自己解析xml。手动编写解析类不仅占用开发时间，而且容易出现数据校验不准确、解析代码受报文格式影响等问题。以下两种方式能够将xml自动转换为JavaBean，开发人员就可以直接使用JavaBean编写代码了。
+一、XMLBeansXMLBeans是Apache的一个开源项目，可在官网下载jar包。使用XMLBeans生成JavaBean需要
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/06/14/XmlToJavaBean/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/04/16/systemBuild/">总结一点高性能架构的知识</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-04-16T07:46:33.000Z" itemprop="datePublished">
+        2015-04-16
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        一、数据库访问性能优化
+对数据库表进行水平分割：按照某些条件将数据进行分类，放置在不同表中。如按年分表、按地区分表等
+对数据库表进行垂直分割：将常用字段和不常用字段分两个表存储
+对数据库表进行分区
+采用有负载能力的集群
+适当使用簇表（散列聚簇表，索引聚簇表）、Hit提示
+升级硬件（CPU、内存、高速磁盘、固态硬盘）
+
+二、高负载高并发网站性能优化
+高性能服务器（硬件）
+高性能数据库
+高效编程语言
+高性能web容器
+HTML静态化：对于新
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/04/16/systemBuild/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/04/15/choice/">为“什么”而选择？</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-04-15T03:43:47.000Z" itemprop="datePublished">
+        2015-04-15
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        &ensp;&ensp;&ensp;&ensp;这一周来过的栖栖遑遑，苦恼于“选择”。&ensp;&ensp;&ensp;&ensp;选择留在原地，会面临一成不变的工作，但是却能按自己的计划一步步改善身体状况、快乐生活、稳步自学mongodb和node。&ensp;&ensp;&ensp;&ensp;选择跨出一步，会面临繁重的加班和无意义的劳力，但是却有希望大幅改善经济状况。&ensp;&ensp;&ensp;&ensp;几天的思考后，
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/04/15/choice/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/03/27/shepherdess/">牧羊姑娘</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-03-27T02:51:27.000Z" itemprop="datePublished">
+        2015-03-27
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        大冰的”乖，摸摸头“里有一首插曲《怎么办》，配上毛毛略带沧桑磁性的声音，野性中带着一丝淡淡的忧愁，怎能抵挡那直击心灵一汪泪水的力量。这首歌的词来自张子选的一首诗，《牧羊姑娘》。摘录在此，以示喜爱，聊表敬意：
+
+怎么办
+青草青
+人间有我用坏的时光
+怎么办
+黄河黄
+天下有你乱放的歌唱
+怎么办
+日月山上夜菩萨默默端庄
+怎么办
+你把我的轮回摆的不是地方
+怎么办
+知道你在牧羊
+不知你在哪座山上
+怎么办
+知道你在世上
+不知你在哪条路上
+怎么办
+三江
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/03/27/shepherdess/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/03/25/markdownGrammar/">MarkDown语法</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-03-25T09:05:43.000Z" itemprop="datePublished">
+        2015-03-25
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        一、空格：&amp;ensp;段落首行通常喜欢空两格，这时候可用&amp;ensp;代表空格，分号是必须写的。
+
+二、换行符：&lt;/br&gt;直接在需要换行的地方加入&lt;/br&gt;即可在此处换行
+
+三、斜体字：*将想展示斜体的文字用*包起来
+
+四、粗斜体：***将想要展示粗斜体的文字用***包起来
+
+五、标题：#一级标题：#二级标题：##三级标题：###
+
+六、无序列表：* 或 + 或 -当想列出几个观点、几家店铺，想让这
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/03/25/markdownGrammar/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/03/24/changeIsValibale/">变和适应</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-03-24T02:21:18.000Z" itemprop="datePublished">
+        2015-03-24
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        &ensp;&ensp;&ensp;&ensp;黑芝麻糊的味道一直让我觉得难闻，去年体检报告说我缺铁，妹妹便买了补铁补钙的黑芝麻糊，要求我每天吃一袋，五袋下来竟渐渐喜欢了它入口即化的滑滑口感，连味道也觉得香甜了。这件事让我联想到，从讨厌一种食物到喜欢一种食物的距离究竟有多大？仅是一瞬间的意念那么短暂吧。吃第一袋的时候觉得难以下咽，想到妹妹的一番爱心不可辜负，便向自己灌输“这是美味，这是美味”，事情就简单起来。改变只在乎于一念间的意愿，“
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/03/24/changeIsValibale/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+
+            <div class="pure-u-1">
+                <nav class="pagination" role="pagination">
+                    <a class="newer-posts" href="/archives/2015/page/3/">← Newer Posts</a>
+                    <span class="page-number">Page 4 of 5</span>
+                    <a class="older-posts" href="/archives/2015/page/5/">Older Posts →</a>
+                </nav>
+            </div>
+
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

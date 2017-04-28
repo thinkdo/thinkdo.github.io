@@ -1,0 +1,189 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">代理服务器引起的用户信息错乱</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2012-03-18T08:25:11.000Z" itemprop="datePublished">
+        2012-03-18
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <p>前段时间项目的登录模块出了一个问题，公司内的测试人员如果同段时间登录后，页头的登录信息处，也就是“欢迎你，某某某，等等等”之类的信息，出现了错乱的情况，比如蜡笔小新登录完毕再切换到其他页面后，页头显示的竟然是樱桃小丸子的信息，这不是气煞小新了，他可是个男人啊，怎么变成了女孩纸。。。但进入到个人空间页面，里边显示的还是小新的个人信息，这是肿么回事？于是我立即想到了网络环境，即我们都是通过代理服务器上网的，有米有可能是代理服务器搞的鬼呢？同时一个同事说其他某个知名网站好像也出现过类似问题，貌似是代理服务器的问题。这样我立即发动了周围没有通过代理服务器上网的朋友（其实就是我对象），经他们公司同事鉴定，未出现该类问题，那基本百分之七十是代理服务器的问题，原理是什么呢？</p>
+<h2 id="网上有一些热心的朋友发了很多类似的文章及问题，经过学习和理解大致简要了如下的流程："><a href="#网上有一些热心的朋友发了很多类似的文章及问题，经过学习和理解大致简要了如下的流程：" class="headerlink" title="网上有一些热心的朋友发了很多类似的文章及问题，经过学习和理解大致简要了如下的流程： "></a>网上有一些热心的朋友发了很多类似的文章及问题，经过学习和理解大致简要了如下的流程： </h2><ul>
+<li>A用户在首页通过ajax发出登录请求</li>
+<li>服务器处理该请求后返回A的个人信息</li>
+<li>浏览器将ajax返回的个人信息置于页头处</li>
+<li>用户A开始浏览新闻页面（请求名称假设为<a href="http://xiaoxin.com/news），新闻页面页头处取session里的用户信息并展示出来。" target="_blank" rel="external">http://xiaoxin.com/news），新闻页面页头处取session里的用户信息并展示出来。</a></li>
+<li>代理服务器缓存新闻页面的url–<a href="http://xiaoxin.com/news" target="_blank" rel="external">http://xiaoxin.com/news</a> 及对应的页面内容（该内容里包含了页头处A的个人信息）</li>
+<li>此时，B用户也在首页通过ajax发出了登录请求</li>
+<li>B用户浏览新闻页面news</li>
+<li>代理服务器从它的缓存中找到了<a href="http://xiaoxin.com/news" target="_blank" rel="external">http://xiaoxin.com/news</a></li>
+<li>代理服务器不再去请求服务器，直接将它缓存中对应<a href="http://xiaoxin.com/news的静态页面拿到返回给用户。" target="_blank" rel="external">http://xiaoxin.com/news的静态页面拿到返回给用户。</a></li>
+<li>于是B就看到了包含A信息的新闻页面<br>代理服务器的这个功能是为了便于局域网内用户可以共享互联网数据，加快访问互联网的速度，但是对于实时变更动态信息的页面来说却是不适合的，于是就有了本篇文章的问题。 那如何解决这个问题呢，如何不让代理服务器返回一个缓存的静态页面？那就是要告诉代理服务器我的这个请求不需要你从缓存中获取。由于我们网站的其他信息还是可以共享的，唯独页头的用户信息是不可以的，那么就考虑把用户信息这块单独做个请求，Ajax的post请求不会被缓存，于是我们就采用了此种方式来加载个人信息。 </li>
+</ul>
+<p>这可能不是一个好的方法，但基于目前我们的业务和需求条件来说已经够用了，随着业务的需求还会有更好的解决方案。</p>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2012/03/10/java-classload/">
+        ← java类加载器
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2012/04/06/d2taobao/">
+        D2之淘宝技术沙龙 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2012/03/18/proxy-problem/" data-title="代理服务器引起的用户信息错乱" data-url="http://thinkdo.github.io/2012/03/18/proxy-problem/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

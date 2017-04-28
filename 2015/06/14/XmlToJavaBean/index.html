@@ -1,0 +1,178 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.useso.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">两种XML转JavaBean的方式</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-06-14T10:25:18.000Z" itemprop="datePublished">
+        2015-06-14
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <p>系统间的数据交互很多都是通过xml格式传输的，如果对方系统不提供解析报文的jar包，开发人员就需要自己解析xml。手动编写解析类不仅占用开发时间，而且容易出现数据校验不准确、解析代码受报文格式影响等问题。以下两种方式能够将xml自动转换为JavaBean，开发人员就可以直接使用JavaBean编写代码了。</p>
+<h4 id="一、XMLBeans"><a href="#一、XMLBeans" class="headerlink" title="一、XMLBeans"></a>一、XMLBeans</h4><p>XMLBeans是Apache的一个开源项目，可在官网下载jar包。使用XMLBeans生成JavaBean需要用到xml对应的schema，不幸的是对方系统竟然没有schema提供，那只能通过返回的xml生成schema了。我用的是Stylus Studio，该工具可以通过图形界面轻松将xml转换成xsd文件。<br>使用XMLBeans转换schema的教程参考的是：（<a href="http://samwalt.iteye.com/blog/1820600" target="_blank" rel="external">XMLBeans使用教程</a>）<br>我有多个xml需要转换为JavaBean，且多个Xml内有重复的节点名称，这样避免不了会生成同名但不同包名的类，假设这两个类分别为com.one.MessageDocument和com.two.MessageDocument，问题来了。。。。当我在代码中使用这个com.one.MessageDocument.Factory.parse(xml)时，会报错，原因是类加载器会将两个MessageDocument弄混，指定使用com.two.MessageDocument，但是加载器会去使用com.one.MessageDocument。删除掉com.one.MessageDocument，程序执行正确。<br>于是下载了最高版本的XMLBeans，验证后这个问题依然存在，不得已只能想其他方式了，于是开始使用xjc</p>
+<h4 id="二、xjc"><a href="#二、xjc" class="headerlink" title="二、xjc"></a>二、xjc</h4><p>java自带的xjc命令可根据schema文件生成对应的java实体类，命令如下：<em> xjc -p 包路径 xsd路径 </em><br>生成的java实体类会放置在当前目录下的包路径下，比如在c盘根目录执行了命令，包路径为com.xx,最终生成的java实体类会放置在c://com/xx下<br>下边就需要将对方系统返回的xml报文解析成实体类了，xml报文是以string字符串返回的，这里用到了java的JAXBContext试下，其中TestBean是<br>刚刚生成的java实体类，代码如下：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">XMLUtil</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> &lt;T&gt; <span class="function">T <span class="title">converyToJavaBean</span><span class="params">(String xml, Class&lt;T&gt; c)</span> </span>&#123;  </div><div class="line">		T t = <span class="keyword">null</span>;  </div><div class="line">		<span class="keyword">try</span> &#123;  </div><div class="line">			JAXBContext context = JAXBContext.newInstance(c);  </div><div class="line">			javax.xml.bind.Unmarshaller unmarshaller = context.createUnmarshaller();  </div><div class="line">			t = (T) unmarshaller.unmarshal(<span class="keyword">new</span> StringReader(xml));  </div><div class="line">		&#125; <span class="keyword">catch</span> (Exception e) &#123;  </div><div class="line">			e.printStackTrace();  </div><div class="line">		&#125;  </div><div class="line"></div><div class="line">		<span class="keyword">return</span> t;  </div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">TestBean testBean = XMLUtil.converyToJavaBean(<span class="string">"xml"</span>,TestBean.class);</div></pre></td></tr></table></figure></p>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2015/04/16/systemBuild/">
+        ← 总结一点高性能架构的知识
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2015/07/01/Html5/">
+        Html5 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2015/06/14/XmlToJavaBean/" data-title="两种XML转JavaBean的方式" data-url="http://thinkdo.github.io/2015/06/14/XmlToJavaBean/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>
