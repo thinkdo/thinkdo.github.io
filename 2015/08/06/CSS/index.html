@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -106,8 +107,8 @@
             <div class="post-banner">
             </div>
             <div class="post-description">
-              <p>###如何使iframe页面的内容在ios设备上滚动？###<br>最近做了一个弹窗的效果，弹窗层内嵌套的是iframe标签，但是发现在ios设备上iframe内容无法滚动，而在Android设备上却能够滚动，试验了很多方法都不行，最终找到了以下这篇文章解决了这个问题，谢谢作者的翻译<a href="http://blog.csdn.net/renfufei/article/details/37663355" target="_blank" rel="external">使IFRAME在iOS设备上支持滚动</a></p>
-<p>###图片和文字的对齐问题###<br>图片和文字并排时，默认情况下是不对齐的，如以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span>/&gt;</span>捉妖记</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+              <h3 id="如何使iframe页面的内容在ios设备上滚动？"><a href="#如何使iframe页面的内容在ios设备上滚动？" class="headerlink" title="如何使iframe页面的内容在ios设备上滚动？"></a>如何使iframe页面的内容在ios设备上滚动？</h3><p>最近做了一个弹窗的效果，弹窗层内嵌套的是iframe标签，但是发现在ios设备上iframe内容无法滚动，而在Android设备上却能够滚动，试验了很多方法都不行，最终找到了以下这篇文章解决了这个问题，谢谢作者的翻译<a href="http://blog.csdn.net/renfufei/article/details/37663355" target="_blank" rel="external">使IFRAME在iOS设备上支持滚动</a></p>
+<h3 id="图片和文字的对齐问题"><a href="#图片和文字的对齐问题" class="headerlink" title="图片和文字的对齐问题"></a>图片和文字的对齐问题</h3><p>图片和文字并排时，默认情况下是不对齐的，如以下代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"test.png"</span>/&gt;</span>捉妖记</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>这种情况下发现图片比文字靠上，test.png的默认对齐是顶部对齐，而文字“捉妖记”的对齐方式是底对齐，我们可通过设置图片的vertical-align属性改变其对齐方式。<a href="http://blog.csdn.net/dududu01/article/details/7641270" target="_blank" rel="external">参考文章</a><br>baseline：将支持valign特性的对象的内容与基线对齐<br>sub：垂直对齐文本的下标<br>super：垂直对齐文本的上标<br>top：将支持valign特性的对象的内容与对象顶端对齐<br>text-top：将支持valign特性的对象的文本与对象顶端对齐<br>middle：将支持valign特性的对象的内容与对象中部对齐<br>bottom：将支持valign特性的对象的文本与对象底端对齐<br>text-bottom：将支持valign特性的对象的文本与对象顶端对齐</p>
 
             </div>

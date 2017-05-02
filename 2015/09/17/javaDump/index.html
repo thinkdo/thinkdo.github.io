@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -106,7 +107,7 @@
             <div class="post-banner">
             </div>
             <div class="post-description">
-              <p>###自动抓取heapDump日志<br>1、打开tomcat\bin\catalina.sh文件<br>2、找到JAVA_OPTS(如果没有找到，则找到“Execute The Requested Command”，在其下一行加入JAVA_OPTS)<br>3、设置JAVA_OPTS=”$JAVA_OPTS -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath={目录}”<br>4、参数说明<br>   -XX:+HeapDumpOnOutOfMemoryError参数表示当JVM发生OutOfMemory时，会自动生成DUMP文件。  -XX:HeapDumpPath={目录}参数表示生成DUMP文件的路径，也可以指定文件名称，例如：-XX:HeapDumpPath=/tomcat/dump/java<em>heapDump.hprof。如果不指定文件名，默认为：java</em><pid><em><date></date></em><time>_heapDump.hprof。</time></pid></p>
+              <h3 id="自动抓取heapDump日志"><a href="#自动抓取heapDump日志" class="headerlink" title="自动抓取heapDump日志"></a>自动抓取heapDump日志</h3><p>1、打开tomcat\bin\catalina.sh文件<br>2、找到JAVA_OPTS(如果没有找到，则找到“Execute The Requested Command”，在其下一行加入JAVA_OPTS)<br>3、设置JAVA_OPTS=”$JAVA_OPTS -server -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath={目录}”<br>4、参数说明<br>   -XX:+HeapDumpOnOutOfMemoryError参数表示当JVM发生OutOfMemory时，会自动生成DUMP文件。  -XX:HeapDumpPath={目录}参数表示生成DUMP文件的路径，也可以指定文件名称，例如：-XX:HeapDumpPath=/tomcat/dump/java<em>heapDump.hprof。如果不指定文件名，默认为：java</em><pid><em><date></date></em><time>_heapDump.hprof。</time></pid></p>
 
             </div>
           </section>

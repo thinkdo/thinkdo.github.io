@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -107,9 +108,9 @@
             </div>
             <div class="post-description">
               <p>最近遇到ajax会进入到error分支的情况，但往往网上的方法并不能解决问题，不同的项目部署、不同的后台处理逻辑使得解决方法不尽相同。从ajax的原理开始一点点的分析是哪里出现了问题。</p>
-<p>###什么是AJAX？<br>AJAX 是一种用于创建快速动态网页的技术。<br>通过在后台与服务器进行少量数据交换，AJAX可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
-<p>###AJAX的原理<br>XMLHttpRequest对象是AJAX的核心，所有的浏览器（ie7以上、火狐、谷歌、）都支持该对象，XMLHttpRequest是js用于与后台服务器交互的对象。</p>
-<p>###查看error里的报错信息<br>想知道为什么进入error，首先需获取error分支的报错信息，按照以下方法打印出来</p>
+<h3 id="什么是AJAX？"><a href="#什么是AJAX？" class="headerlink" title="什么是AJAX？"></a>什么是AJAX？</h3><p>AJAX 是一种用于创建快速动态网页的技术。<br>通过在后台与服务器进行少量数据交换，AJAX可以使网页实现异步更新。这意味着可以在不重新加载整个网页的情况下，对网页的某部分进行更新。</p>
+<h3 id="AJAX的原理"><a href="#AJAX的原理" class="headerlink" title="AJAX的原理"></a>AJAX的原理</h3><p>XMLHttpRequest对象是AJAX的核心，所有的浏览器（ie7以上、火狐、谷歌、）都支持该对象，XMLHttpRequest是js用于与后台服务器交互的对象。</p>
+<h3 id="查看error里的报错信息"><a href="#查看error里的报错信息" class="headerlink" title="查看error里的报错信息"></a>查看error里的报错信息</h3><p>想知道为什么进入error，首先需获取error分支的报错信息，按照以下方法打印出来</p>
 <pre><code class="javascript">$.ajax({
         <span class="attr">url</span>:<span class="string">'/test'</span>,
         <span class="attr">dataType</span>:<span class="string">"json"</span>,
@@ -129,8 +130,8 @@
 });
 </code></pre>
 <p>textStatus有几种值，”null”, “timeout”, “error”, “abort” 和 “parsererror”。发现打印出来的值是timeout，证明是请求超时。</p>
-<p>###超时<br>但是未到超时时间10000ms,为什么会超时？因为async为false时，浏览器已经被锁定，此时不会执行任何javascript，所以timeout不会起到任何作用。只有async是true时，timeout才会起作用。这时候就想到了可能是async的问题，一般来说尽量不要设置async为false，而将业务逻辑放入到success的callback中，这也是jquery1.8版本所倡导的方式。</p>
-<p>###总结<br>当后台执行ajax的时间过长，async为false时就会锁住页面，这时微信浏览器会进入到error中，报timeout的错误。解决方法是将async:false去掉，并在success的callback中处理对应业务逻辑。</p>
+<h3 id="超时"><a href="#超时" class="headerlink" title="超时"></a>超时</h3><p>但是未到超时时间10000ms,为什么会超时？因为async为false时，浏览器已经被锁定，此时不会执行任何javascript，所以timeout不会起到任何作用。只有async是true时，timeout才会起作用。这时候就想到了可能是async的问题，一般来说尽量不要设置async为false，而将业务逻辑放入到success的callback中，这也是jquery1.8版本所倡导的方式。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>当后台执行ajax的时间过长，async为false时就会锁住页面，这时微信浏览器会进入到error中，报timeout的错误。解决方法是将async:false去掉，并在success的callback中处理对应业务逻辑。</p>
 
             </div>
           </section>

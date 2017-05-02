@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -106,23 +107,22 @@
             <div class="post-banner">
             </div>
             <div class="post-description">
-              <p>##sublime使用方式介绍</p>
-<p>###install安装<br>支持mac os和windows os<br>1、下载地址：<strong><em><a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a></em></strong><br>2、下载完毕后，安装到本地</p>
-<p>###File（文件）<br>1、打开文件：ctrl+o<br>2、新建文件：ctrl+n<br>3、打开上一次打开的文件：ctrl+shift+t</p>
-<p>###edit（编辑）<br>1、注释/取消注释：ctrl+/（行注释），ctrl+shift+/（块注释）<br>2、在当前行下插入下一行：ctrl+enter<br>3、在当前行前插入一行：ctrl+shift+enter<br>4、编写代码时，sublime支持语法的自动模糊匹配<br><img src="../../../../images/1.png" alt="自动模糊匹配样例"><br>5、增加缩进：ctrl+}、减少缩进：ctrl+{<br>6、粘贴时总是不按照缩进进行粘贴，用此快捷键解决问题：ctrl+shift+v</p>
-<p>###selection（选择）<br>1、选择当前行：ctrl+l<br>2、选择相同的单词，生成多行游标：<em>ctrl+d</em>，非常出彩的一个特性。按esc可以退出多行游标<br>3、生成多行游标时，如果当想跳过当前单词：<em>ctrl+k+d</em><br>4、复制当前行：ctrl+shift+d</p>
-<p>###find（查找）<br>1、查找：ctrl+f<br>2、替换：ctrl+h</p>
-<p>###goto（定位）<br>查找任何文件或符号等，都用<em>ctrl+p</em>，非常出彩的一个特性<br>1、ctrl+p调出窗口后，输入文件名称，下方就会列出符合名称的文件名，支持模糊匹配。还可指定某个路径下的某个文件，如输入com/index.jsp，则会列出com文件夹下的index.jsp<br>2、定位行：调出ctrl+p后，输入:+行号，回车即可定位到该行<br>3、定位css函数：调出ctrl+p后，输入@后，自动会列出当前的选择器的名称。（如果为html文档，则用#代替@）<br>4、组合查找：通过以上的命令就可以组合查找想要找到的符号了，假如想找css文件夹下bootstrap.css文件内的名字为“line”的选择器，那么可以在ctrl+p的窗口中输入：css/bo@line<br><img src="../../../../images/2.png" alt="ctrl+p样例"></p>
-<p>###命令模式<br>命令模式是sublime编辑器特有的一个模式，非常实用，用快捷键ctrl+shift+p可以启动命令模式<br>1、启动命令模式后，输入set syntax:(因为支持模糊匹配，所以可以直接输入ss:或者css、javascript等)来指定当前文件的语法模式<br>2、通过命令模式可以做很多事情，比如显示或隐藏编辑器右方的minimap，那么就直接在命令模式中输入minimap点击回车</p>
-<p>###preference（偏好）<br>1、编辑器的默认风格：setting-default<br>2、可以在这里边重写当前编辑器的风格：setting-user<br>3、编辑器的快捷键默认设置：key bindings-default<br>4、自己设置快捷键：key bindings-user，我们不知道command怎么办？打开控制台（ctr+·），输入sublime.log_commands(True)回车，这时候你对编辑器的操作中，就会在控制台中打印出对应的command了。</p>
-<p>##常用插件<br>sublime提供了非常方便的方式安装插件，即使用packagecontrol安装所有的插件，但我们首先需要按照packagecontrol，安装方式如下<br>1、在<a href="https://packagecontrol.io/installation里拷贝安装命令" target="_blank" rel="external">https://packagecontrol.io/installation里拷贝安装命令</a><br>2、用快捷键ctrl+`打开控制台，粘贴刚才拷贝的安装命令，按回车后等待安装完成，重启sublime<br>3、使用命令模式ctrl+shift+p，输入pc:install后回车<br><a href="https://packagecontrol.io/网站上有很多插件的介绍，包括最流行的、最新的插件等等" target="_blank" rel="external">https://packagecontrol.io/网站上有很多插件的介绍，包括最流行的、最新的插件等等</a></p>
-<p>###theme<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入”theme 主题名”按回车等待安装<br>3、安装完毕后会自动打开一个说明文件，找到说明文件中的配置信息，拷贝到preference的settings user文件中<br><img src="../../../../images/3.png" alt="自动模糊匹配样例"></p>
-<p>###Emmet<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入emmet，可以看到不同类型的emmet，选择javascript和css的进行安装，回车后等待安装<br>举例：当新建html时，输入!，然后按ctrl+e，将会自动添加html页面的文档。<br>请参考<a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">这位朋友的博客</a>，这里列出了很多的emmet语法</p>
-<p>###snippet<br>1、使用ctrl+shift+p调出来命令模式后，输入pp:install调出来安装插件的命令窗口<br>2、输入javaScript node寻找插件，点击回车后即会自动安装插件。安装完毕后，在编写JavaScript代码时使用JavaScript的snippet功能将会使编写代码变得非常轻松，所有的javasnippet在网站<br><a href="https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets" target="_blank" rel="external">https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets</a> 上都能找到<br>3、安装jquery的snippet同2（在pp:install后输入的是jquery）<br>4、安装回调函数的snippet同2（在pp:install后输入的是insert callback），使用快捷键alt+c即会补全回调函数</p>
-<p>###advancedNewfile<br>快速创建一个文件<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入advancednewfile，按回车安装插件<br>3、使用命令ctrl+alt+n，在输入框中输入路径和文件名，回车将创建新文件</p>
-<p>###docblockr<br>编写代码时，需要添加一些注释，该插件提供了快速生成注释的方法<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入docblockr，按回车安装插件<br>3、输入/*回车后会自动补全</p>
-<p>###sublimelinter<br>语法校验插件<br>1、使用ctrl+shift+p调出来命令模式后，输入pp:install调出来安装插件的命令窗口<br>2、输入sublimeLinter，按回车安装插件,该插件是一个总体的框架，如果需要安装某种语言的校验插件，还需要安装对应语言的插件<br>3、假如我们需要安装js的linter，那么首先通过npm命令安装jshint，在终端工具中输入npm install -g  jshint<br>4、在sublime安装插件命令中输入sublimeLinter-jshint<br>5、新建.jshintrc文件，例如：键入{“eqeqeq”:true}来校验三等号</p>
-<p>##开发案例，新建一个html文件<br>1、ctrl+n：新建文件<br>2、ctrl+shift+p：输入ss:html，指定为html格式<br>3、键入标签<html>，使用快捷键Alt+.自动闭合标签（mac上的快捷键是option+command+.）<br>4、ctrl+p命令调出后，通过#找到body标签<br>5、键入ul&gt;.item$*10,按ctrl+e后，则会生成ul标签，内嵌10个<li>子标签，li的class为item1到item10<br>6、选中</li>，按多次ctrl+d产生多行游标<br>7、在ctrl+shift+p中键入snippte:function,回车后将会在页面上自动出现function的代码片段，这时候按tab键可以更改函数变量</html></p>
+              <h2 id="sublime使用方式介绍"><a href="#sublime使用方式介绍" class="headerlink" title="sublime使用方式介绍"></a>sublime使用方式介绍</h2><p>###install安装<br>支持mac os和windows os<br>1、下载地址：<strong><em><a href="http://www.sublimetext.com/3" target="_blank" rel="external">http://www.sublimetext.com/3</a></em></strong><br>2、下载完毕后，安装到本地</p>
+<h3 id="File（文件）"><a href="#File（文件）" class="headerlink" title="File（文件）"></a>File（文件）</h3><p>1、打开文件：ctrl+o<br>2、新建文件：ctrl+n<br>3、打开上一次打开的文件：ctrl+shift+t</p>
+<h3 id="edit（编辑）"><a href="#edit（编辑）" class="headerlink" title="edit（编辑）"></a>edit（编辑）</h3><p>1、注释/取消注释：ctrl+/（行注释），ctrl+shift+/（块注释）<br>2、在当前行下插入下一行：ctrl+enter<br>3、在当前行前插入一行：ctrl+shift+enter<br>4、编写代码时，sublime支持语法的自动模糊匹配<br><img src="../../../../images/1.png" alt="自动模糊匹配样例"><br>5、增加缩进：ctrl+}、减少缩进：ctrl+{<br>6、粘贴时总是不按照缩进进行粘贴，用此快捷键解决问题：ctrl+shift+v</p>
+<h3 id="selection（选择）"><a href="#selection（选择）" class="headerlink" title="selection（选择）"></a>selection（选择）</h3><p>1、选择当前行：ctrl+l<br>2、选择相同的单词，生成多行游标：<em>ctrl+d</em>，非常出彩的一个特性。按esc可以退出多行游标<br>3、生成多行游标时，如果当想跳过当前单词：<em>ctrl+k+d</em><br>4、复制当前行：ctrl+shift+d</p>
+<h3 id="find（查找）"><a href="#find（查找）" class="headerlink" title="find（查找）"></a>find（查找）</h3><p>1、查找：ctrl+f<br>2、替换：ctrl+h</p>
+<h3 id="goto（定位）"><a href="#goto（定位）" class="headerlink" title="goto（定位）"></a>goto（定位）</h3><p>查找任何文件或符号等，都用<em>ctrl+p</em>，非常出彩的一个特性<br>1、ctrl+p调出窗口后，输入文件名称，下方就会列出符合名称的文件名，支持模糊匹配。还可指定某个路径下的某个文件，如输入com/index.jsp，则会列出com文件夹下的index.jsp<br>2、定位行：调出ctrl+p后，输入:+行号，回车即可定位到该行<br>3、定位css函数：调出ctrl+p后，输入@后，自动会列出当前的选择器的名称。（如果为html文档，则用#代替@）<br>4、组合查找：通过以上的命令就可以组合查找想要找到的符号了，假如想找css文件夹下bootstrap.css文件内的名字为“line”的选择器，那么可以在ctrl+p的窗口中输入：css/bo@line<br><img src="../../../../images/2.png" alt="ctrl+p样例"></p>
+<h3 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h3><p>命令模式是sublime编辑器特有的一个模式，非常实用，用快捷键ctrl+shift+p可以启动命令模式<br>1、启动命令模式后，输入set syntax:(因为支持模糊匹配，所以可以直接输入ss:或者css、javascript等)来指定当前文件的语法模式<br>2、通过命令模式可以做很多事情，比如显示或隐藏编辑器右方的minimap，那么就直接在命令模式中输入minimap点击回车</p>
+<h3 id="preference（偏好）"><a href="#preference（偏好）" class="headerlink" title="preference（偏好）"></a>preference（偏好）</h3><p>1、编辑器的默认风格：setting-default<br>2、可以在这里边重写当前编辑器的风格：setting-user<br>3、编辑器的快捷键默认设置：key bindings-default<br>4、自己设置快捷键：key bindings-user，我们不知道command怎么办？打开控制台（ctr+·），输入sublime.log_commands(True)回车，这时候你对编辑器的操作中，就会在控制台中打印出对应的command了。</p>
+<h2 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h2><p>sublime提供了非常方便的方式安装插件，即使用packagecontrol安装所有的插件，但我们首先需要按照packagecontrol，安装方式如下<br>1、在<a href="https://packagecontrol.io/installation里拷贝安装命令" target="_blank" rel="external">https://packagecontrol.io/installation里拷贝安装命令</a><br>2、用快捷键ctrl+`打开控制台，粘贴刚才拷贝的安装命令，按回车后等待安装完成，重启sublime<br>3、使用命令模式ctrl+shift+p，输入pc:install后回车<br><a href="https://packagecontrol.io/网站上有很多插件的介绍，包括最流行的、最新的插件等等" target="_blank" rel="external">https://packagecontrol.io/网站上有很多插件的介绍，包括最流行的、最新的插件等等</a></p>
+<h3 id="theme"><a href="#theme" class="headerlink" title="theme"></a>theme</h3><p>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入”theme 主题名”按回车等待安装<br>3、安装完毕后会自动打开一个说明文件，找到说明文件中的配置信息，拷贝到preference的settings user文件中<br><img src="../../../../images/3.png" alt="自动模糊匹配样例"></p>
+<h3 id="Emmet"><a href="#Emmet" class="headerlink" title="Emmet"></a>Emmet</h3><p>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入emmet，可以看到不同类型的emmet，选择javascript和css的进行安装，回车后等待安装<br>举例：当新建html时，输入!，然后按ctrl+e，将会自动添加html页面的文档。<br>请参考<a href="http://www.w3cplus.com/tools/emmet-cheat-sheet.html" target="_blank" rel="external">这位朋友的博客</a>，这里列出了很多的emmet语法</p>
+<h3 id="snippet"><a href="#snippet" class="headerlink" title="snippet"></a>snippet</h3><p>1、使用ctrl+shift+p调出来命令模式后，输入pp:install调出来安装插件的命令窗口<br>2、输入javaScript node寻找插件，点击回车后即会自动安装插件。安装完毕后，在编写JavaScript代码时使用JavaScript的snippet功能将会使编写代码变得非常轻松，所有的javasnippet在网站<br><a href="https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets" target="_blank" rel="external">https://packagecontrol.io/packages/JavaScript%20%26%20NodeJS%20Snippets</a> 上都能找到<br>3、安装jquery的snippet同2（在pp:install后输入的是jquery）<br>4、安装回调函数的snippet同2（在pp:install后输入的是insert callback），使用快捷键alt+c即会补全回调函数</p>
+<h3 id="advancedNewfile"><a href="#advancedNewfile" class="headerlink" title="advancedNewfile"></a>advancedNewfile</h3><p>快速创建一个文件<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入advancednewfile，按回车安装插件<br>3、使用命令ctrl+alt+n，在输入框中输入路径和文件名，回车将创建新文件</p>
+<h3 id="docblockr"><a href="#docblockr" class="headerlink" title="docblockr"></a>docblockr</h3><p>编写代码时，需要添加一些注释，该插件提供了快速生成注释的方法<br>1、使用命令模式ctrl+shift+p，输入pc:install后回车<br>2、输入docblockr，按回车安装插件<br>3、输入/*回车后会自动补全</p>
+<h3 id="sublimelinter"><a href="#sublimelinter" class="headerlink" title="sublimelinter"></a>sublimelinter</h3><p>语法校验插件<br>1、使用ctrl+shift+p调出来命令模式后，输入pp:install调出来安装插件的命令窗口<br>2、输入sublimeLinter，按回车安装插件,该插件是一个总体的框架，如果需要安装某种语言的校验插件，还需要安装对应语言的插件<br>3、假如我们需要安装js的linter，那么首先通过npm命令安装jshint，在终端工具中输入npm install -g  jshint<br>4、在sublime安装插件命令中输入sublimeLinter-jshint<br>5、新建.jshintrc文件，例如：键入{“eqeqeq”:true}来校验三等号</p>
+<h2 id="开发案例，新建一个html文件"><a href="#开发案例，新建一个html文件" class="headerlink" title="开发案例，新建一个html文件"></a>开发案例，新建一个html文件</h2><p>1、ctrl+n：新建文件<br>2、ctrl+shift+p：输入ss:html，指定为html格式<br>3、键入标签<html>，使用快捷键Alt+.自动闭合标签（mac上的快捷键是option+command+.）<br>4、ctrl+p命令调出后，通过#找到body标签<br>5、键入ul&gt;.item$*10,按ctrl+e后，则会生成ul标签，内嵌10个<li>子标签，li的class为item1到item10<br>6、选中</li>，按多次ctrl+d产生多行游标<br>7、在ctrl+shift+p中键入snippte:function,回车后将会在页面上自动出现function的代码片段，这时候按tab键可以更改函数变量</html></p>
 
             </div>
           </section>
@@ -135,8 +135,8 @@
     
     <span class="page-number">•</span>
     
-    <a class="older-posts" href="/2016/06/30/httpDeeper/">
-        一、http详细理解 →
+    <a class="older-posts" href="/2016/06/30/http/">
+        http初步理解 →
     </a>
     
 </nav>

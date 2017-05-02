@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -106,11 +107,11 @@
             <div class="post-banner">
             </div>
             <div class="post-description">
-              <p>#将本地项目上传到github上<br>一、初始化为git目录<br>git init：进入到要初始化的目录下，执行该命令。git init执行后，表示当前目录已经成为一个git目录，会在当前目录下创建一个.git文件夹，该文件夹下存放的是版本历史记录文件。<br>git init bare：这个命令和git init类似，但不会在当前目录下生成.git文件夹，而是直接将版本历史记录文件放到了当前目录下，这就使得当前目录成为了一个裸仓库，不允许进行远端仓库的任何git操作。这样做的好处是避免这种冲突：用户A在远端仓库master分支下执行git操作，而同时用户B将本地版本提交到远端仓库的master分支，这时候就产生了冲突。</p>
+              <h1 id="将本地项目上传到github上"><a href="#将本地项目上传到github上" class="headerlink" title="将本地项目上传到github上"></a>将本地项目上传到github上</h1><p>一、初始化为git目录<br>git init：进入到要初始化的目录下，执行该命令。git init执行后，表示当前目录已经成为一个git目录，会在当前目录下创建一个.git文件夹，该文件夹下存放的是版本历史记录文件。<br>git init bare：这个命令和git init类似，但不会在当前目录下生成.git文件夹，而是直接将版本历史记录文件放到了当前目录下，这就使得当前目录成为了一个裸仓库，不允许进行远端仓库的任何git操作。这样做的好处是避免这种冲突：用户A在远端仓库master分支下执行git操作，而同时用户B将本地版本提交到远端仓库的master分支，这时候就产生了冲突。</p>
 <p>二、添加本地文件至git目录下<br>git add myFloder：其中myFloder是我想放入到git项目中的文件夹名称，首先将myFloder拷贝到上述初始化的git目录下，执行add命令后会将myFloder及其子文件夹和文件都添加为一个git项目，会看到所有的文件夹和文件都打上了加号的图标。<br>git add myTest.java：添加单个文件则在后边直接跟文件名<br>git add *.java：支持文件名模糊匹配<br>git add .：表示将当前目录下的所有文件都添加进去。</p>
 <p>三、连接远程仓库<br>git remote add origin git@github.com:myGitHub/myReposity.git: 其中myGitHub为git的用户名，myReposity是项目名称</p>
 <p>四、添加项目到远程仓库上<br>git push -u origin master</p>
-<p>#其他<br>一、移除初始化<br>进入到初始化的目录，删除.git文件夹，或者执行命令rm -rf .git</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>一、移除初始化<br>进入到初始化的目录，删除.git文件夹，或者执行命令rm -rf .git</p>
 <p>二、从已有的Git仓库克隆出一个新的镜像仓库<br>git clone git://github.com/myGitHub/myReposity.git mylocalRepository：该条命令表示将已有的github上的一个项目下载到本地，命名为mylocalRepository。</p>
 <p>三、提交代码到仓库中<br>git add .<br>git status<br>git commit -m  ‘提交注释’ </p>
 

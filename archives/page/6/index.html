@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -90,76 +91,6 @@
         <div class="posts">
             <h1 class="content-subhead"> Index </h1>
 
-            
-            <section class="post">
-                <header class="post-header">
-                    <h2 class="post-title"><a href="/2015/06/14/XmlToJavaBean/">两种XML转JavaBean的方式</a></h2>
-                    <p class="post-meta">
-    <time class="post-category post-category-design" datetime="2015-06-14T10:25:18.000Z" itemprop="datePublished">
-        2015-06-14
-    </time>
-    
-</p>
-                </header>
-                <!--<div class="post-banner">-->
-                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
-                <!--</div>-->
-                <div class="post-description">
-                    <p>
-                        
-                        系统间的数据交互很多都是通过xml格式传输的，如果对方系统不提供解析报文的jar包，开发人员就需要自己解析xml。手动编写解析类不仅占用开发时间，而且容易出现数据校验不准确、解析代码受报文格式影响等问题。以下两种方式能够将xml自动转换为JavaBean，开发人员就可以直接使用JavaBean编写代码了。
-一、XMLBeansXMLBeans是Apache的一个开源项目，可在官网下载jar包。使用XMLBeans生成JavaBean需要
-                        
-                    </p>
-                    
-                    <p>
-                        <a href="/2015/06/14/XmlToJavaBean/" class="excerpt-link">Read More
-                            ...</a>
-                    </p>
-                    
-                </div>
-            </section>
-            
-            <section class="post">
-                <header class="post-header">
-                    <h2 class="post-title"><a href="/2015/04/16/systemBuild/">总结一点高性能架构的知识</a></h2>
-                    <p class="post-meta">
-    <time class="post-category post-category-design" datetime="2015-04-16T07:46:33.000Z" itemprop="datePublished">
-        2015-04-16
-    </time>
-    
-</p>
-                </header>
-                <!--<div class="post-banner">-->
-                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
-                <!--</div>-->
-                <div class="post-description">
-                    <p>
-                        
-                        一、数据库访问性能优化
-对数据库表进行水平分割：按照某些条件将数据进行分类，放置在不同表中。如按年分表、按地区分表等
-对数据库表进行垂直分割：将常用字段和不常用字段分两个表存储
-对数据库表进行分区
-采用有负载能力的集群
-适当使用簇表（散列聚簇表，索引聚簇表）、Hit提示
-升级硬件（CPU、内存、高速磁盘、固态硬盘）
-
-二、高负载高并发网站性能优化
-高性能服务器（硬件）
-高性能数据库
-高效编程语言
-高性能web容器
-HTML静态化：对于新
-                        
-                    </p>
-                    
-                    <p>
-                        <a href="/2015/04/16/systemBuild/" class="excerpt-link">Read More
-                            ...</a>
-                    </p>
-                    
-                </div>
-            </section>
             
             <section class="post">
                 <header class="post-header">
@@ -302,6 +233,64 @@ HTML静态化：对于新
                 </div>
             </section>
             
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2015/03/04/index/">感谢</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2015-03-04T08:58:37.000Z" itemprop="datePublished">
+        2015-03-04
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        感谢地球，感谢地球创造生命，进化创造人类，繁衍创造我，我创造森度博客。
+
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2015/03/04/index/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2012/05/11/jvm/">java虚拟机深入理解</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2012-05-11T02:43:59.000Z" itemprop="datePublished">
+        2012-05-11
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        周志朋老师写的“深入理解Java虚拟机”中的第二章，是很重要的一章，个人认为，作为一个java程序员一定要将Java最经典最有价值的“Java虚拟机”搞懂，就算是搞不全懂，也要能说出个中原理，这才不愧为一名java程序员。反复读了2.2.2java虚拟机栈，大概明白其中含义。总结为以下几点： 
+1. Java虚拟机栈和程序计数器一样，是每个线程对应一个，也就是说，如果启动了n个线程，那么就有n个程序计数器及n个java虚拟机栈，栈的生命
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2012/05/11/jvm/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
 
             <!-- page-nav-start -->
             <div class="clear" style="height: 25px;">&nbsp;</div>
@@ -309,7 +298,7 @@ HTML静态化：对于新
             <div class="pure-u-1">
                 <nav class="pagination" role="pagination">
                     <a class="newer-posts" href="/archives/page/5/">← Newer Posts</a>
-                    <span class="page-number">Page 6 of 8</span>
+                    <span class="page-number">Page 6 of 7</span>
                     <a class="older-posts" href="/archives/page/7/">Older Posts →</a>
                 </nav>
             </div>

@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -106,10 +107,9 @@
             <div class="post-banner">
             </div>
             <div class="post-description">
-              <p>###tomcat内存配置</p>
-<p>####Linux<br>1、cd tomcat/bin<br>进入到tomcat的bin目录<br>2、vi catalina.sh<br>在文档的第一行或者注释内容结束后加上JAVA_OPTS,如果已经存在JAVA_OPTS，则更改其属性值。<br>如：J<strong><em>AVA_OPTS=””-Xms1024m -Xmx4096m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=2048m”</em></strong><br>3、:wq!<br>保存退出。重启系统。</p>
-<p>####Windows—执行startup.bat启动tomcat<br>1、找到tomcat的bin目录的catalina.bat文件<br>2、编辑catalina.bat文件<br>在文档的第一行或者注释内容结束后加上JAVA_OPTS，如果已经存在JAVA_OPTS，则更改其属性值。<br><strong><em>set JAVA_OPTS=-Xms64m -Xmx256m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m</em></strong><br>注意：如果是解压版的tomcat可能没有这个文件。这种情况下利用eclipse去配置即可，如下图<br><img src="../../../../images/tomcat.png" alt="tomcat在eclipse中的配置"></p>
-<p>####Windows—通过系统启动tomcat.exe<br>这种方式启动tomcat，catalina.bat配置是不起作用的，需要配置系统的注册表进行内存配置<br>1、在“运行”中输入“regedit”命令调出注册表<br>2、修改注册表<br>不同的tomcat版本修改的注册表不同：<br>Tomcat5是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Tomcat Service Manager\Tomcat5\Parameters\JavaOptions<br>Tomcat6是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Procrun 2.0\Tomcat6\Parameters\Java<br>Tomcat7是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Procrun 2.0\Tomcat7\Parameters\Java<br>在末尾加入 -Xms1000m -Xmx2000m</p>
+              <h3 id="tomcat内存配置"><a href="#tomcat内存配置" class="headerlink" title="tomcat内存配置"></a>tomcat内存配置</h3><p>####Linux<br>1、cd tomcat/bin<br>进入到tomcat的bin目录<br>2、vi catalina.sh<br>在文档的第一行或者注释内容结束后加上JAVA_OPTS,如果已经存在JAVA_OPTS，则更改其属性值。<br>如：J<strong><em>AVA_OPTS=””-Xms1024m -Xmx4096m -Xss1024K -XX:PermSize=512m -XX:MaxPermSize=2048m”</em></strong><br>3、:wq!<br>保存退出。重启系统。</p>
+<h4 id="Windows—执行startup-bat启动tomcat"><a href="#Windows—执行startup-bat启动tomcat" class="headerlink" title="Windows—执行startup.bat启动tomcat"></a>Windows—执行startup.bat启动tomcat</h4><p>1、找到tomcat的bin目录的catalina.bat文件<br>2、编辑catalina.bat文件<br>在文档的第一行或者注释内容结束后加上JAVA_OPTS，如果已经存在JAVA_OPTS，则更改其属性值。<br><strong><em>set JAVA_OPTS=-Xms64m -Xmx256m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m</em></strong><br>注意：如果是解压版的tomcat可能没有这个文件。这种情况下利用eclipse去配置即可，如下图<br><img src="../../../../images/tomcat.png" alt="tomcat在eclipse中的配置"></p>
+<h4 id="Windows—通过系统启动tomcat-exe"><a href="#Windows—通过系统启动tomcat-exe" class="headerlink" title="Windows—通过系统启动tomcat.exe"></a>Windows—通过系统启动tomcat.exe</h4><p>这种方式启动tomcat，catalina.bat配置是不起作用的，需要配置系统的注册表进行内存配置<br>1、在“运行”中输入“regedit”命令调出注册表<br>2、修改注册表<br>不同的tomcat版本修改的注册表不同：<br>Tomcat5是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Tomcat Service Manager\Tomcat5\Parameters\JavaOptions<br>Tomcat6是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Procrun 2.0\Tomcat6\Parameters\Java<br>Tomcat7是<br>HKEY_LOCAL_MACHINE\SOFTWARE\Apache Software Foundation\Procrun 2.0\Tomcat7\Parameters\Java<br>在末尾加入 -Xms1000m -Xmx2000m</p>
 
             </div>
           </section>

@@ -24,6 +24,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 
     <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
     <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- SITE FAVICONS -->
     <link rel="shortcut icon" href="/images/favicon.ico"/>
@@ -135,8 +136,8 @@
                 <div class="post-description">
                     <p>
                         
-                        ###虚拟主机一台http服务器允许搭建多个web站点，这时候可以利用虚拟主机去完成，外表看上去是多个域名，实际对应的都是同一台服务器，同一个ip。所以在客户端进行请求时，Host首部字段的域名是十分重要的，用来区分到底是访问的哪个域名的站点。
-###转发程序一、代理代理在客户端和服务器端扮演了中间人的角色，接收客户端的请求然后转发给服务器端，接收服务器端的响应再转发给客户端。代理服务器可以设置一些缓存，提高访问效率，当客户端再次访问相
+                        虚拟主机一台http服务器允许搭建多个web站点，这时候可以利用虚拟主机去完成，外表看上去是多个域名，实际对应的都是同一台服务器，同一个ip。所以在客户端进行请求时，Host首部字段的域名是十分重要的，用来区分到底是访问的哪个域名的站点。
+转发程序一、代理代理在客户端和服务器端扮演了中间人的角色，接收客户端的请求然后转发给服务器端，接收服务器端的响应再转发给客户端。代理服务器可以设置一些缓存，提高访问效率，当客户端再次访问相同的请求时，
                         
                     </p>
                     
@@ -208,36 +209,6 @@
             
             <section class="post">
                 <header class="post-header">
-                    <h2 class="post-title"><a href="/2016/06/30/http/">http初步理解</a></h2>
-                    <p class="post-meta">
-    <time class="post-category post-category-design" datetime="2016-06-30T13:22:06.000Z" itemprop="datePublished">
-        2016-06-30
-    </time>
-    
-</p>
-                </header>
-                <!--<div class="post-banner">-->
-                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
-                <!--</div>-->
-                <div class="post-description">
-                    <p>
-                        
-                        对很多初识网络知识的人，可能对http完全茫然，这里就按照我的理解介绍一下http是什么，以及它的基本内容。这里是笼统的比喻一下，很多细节从专业的角度都是不正确的，只是有助于没有网络知识的人去理解吧。
-###Http是什么？人类交流靠声音和语言，计算机和计算机通信靠的是网络和协议，网络和协议就好像声音和语言。而Http就是众多网络协议中的一种。使用的最广泛的版本为http/1.0
-###计算机之间的交流让我们按照人类交流的方式想象一下计
-                        
-                    </p>
-                    
-                    <p>
-                        <a href="/2016/06/30/http/" class="excerpt-link">Read More
-                            ...</a>
-                    </p>
-                    
-                </div>
-            </section>
-            
-            <section class="post">
-                <header class="post-header">
                     <h2 class="post-title"><a href="/2016/06/30/httpDeeper/">一、http详细理解</a></h2>
                     <p class="post-meta">
     <time class="post-category post-category-design" datetime="2016-06-30T13:22:06.000Z" itemprop="datePublished">
@@ -253,12 +224,42 @@
                     <p>
                         
                         上一篇是给小白介绍的http的知识，这一篇是针对http细节进行剖析，并介绍整个http请求生命周期内涉及到的其他协议，就是http和他的小伙伴们是如何协同工作的。
-###TCP/IP协议族先来认识http所属的大家族–TCP/IP协议族。网络的运转，不是靠http一个协议就可以的，而是整个大家族的事情，每个家族成员各尽其责，互相协作完成互联网的传输请求。TCP/IP是互联网相关的各类协议族的总称。这其中包括：Http、TCP、IP、F
+TCP/IP协议族先来认识http所属的大家族–TCP/IP协议族。网络的运转，不是靠http一个协议就可以的，而是整个大家族的事情，每个家族成员各尽其责，互相协作完成互联网的传输请求。TCP/IP是互联网相关的各类协议族的总称。这其中包括：Http、TCP、IP、FTP、
                         
                     </p>
                     
                     <p>
                         <a href="/2016/06/30/httpDeeper/" class="excerpt-link">Read More
+                            ...</a>
+                    </p>
+                    
+                </div>
+            </section>
+            
+            <section class="post">
+                <header class="post-header">
+                    <h2 class="post-title"><a href="/2016/06/30/http/">http初步理解</a></h2>
+                    <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2016-06-30T13:22:06.000Z" itemprop="datePublished">
+        2016-06-30
+    </time>
+    
+</p>
+                </header>
+                <!--<div class="post-banner">-->
+                    <!--<img class="pure-img" src="/images/article_bottom_line.png" alt="banner">-->
+                <!--</div>-->
+                <div class="post-description">
+                    <p>
+                        
+                        对很多初识网络知识的人，可能对http完全茫然，这里就按照我的理解介绍一下http是什么，以及它的基本内容。这里是笼统的比喻一下，很多细节从专业的角度都是不正确的，只是有助于没有网络知识的人去理解吧。
+Http是什么？人类交流靠声音和语言，计算机和计算机通信靠的是网络和协议，网络和协议就好像声音和语言。而Http就是众多网络协议中的一种。使用的最广泛的版本为http/1.0
+计算机之间的交流让我们按照人类交流的方式想象一下计算机的世界是
+                        
+                    </p>
+                    
+                    <p>
+                        <a href="/2016/06/30/http/" class="excerpt-link">Read More
                             ...</a>
                     </p>
                     
