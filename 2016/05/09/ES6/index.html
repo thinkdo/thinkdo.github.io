@@ -1,0 +1,207 @@
+<!DOCTYPE html >
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US"> <!--<![endif]-->
+<head>
+    <!-- BASE META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SITE TITLE -->
+    <title>森度</title>
+
+    <!--SITE INFO -->
+    <meta name="robots" content="index,follow">
+    <meta name="author" content="cuican">
+    <meta name="application-name" content="森度">
+    <meta name="keywords" content="Thonatos,Thonatos.Yang,Grimrock,Juy">
+    <meta name="description" content=""/>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+
+    <!-- INCLUDE STYLE -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'/>
+    <link href="http://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- SITE FAVICONS -->
+    <link rel="shortcut icon" href="/images/favicon.ico"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/css/style-old-ie.min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="/css/style.min.css">
+    <!--<![endif]-->
+
+</head>
+<body>
+<div class="layout">
+  <!--sidebar-->
+  <div class="sidebar">
+    <!-- Side Start -->
+    <!-- Siderbar  -->
+    <div class="header">
+        <hgroup>
+            <h1 class="brand-title"><a href="http://thinkdo.github.io" alt="森度"><img class="pure-img" src="/images/osbloglg.png"/></a></h1>
+            <h2 class="brand-tagline">
+                <small>森度的博客</small>
+            </h2>
+        </hgroup>
+
+        <div id="sidebar_nav" class="pure-menu pure-menu-open">
+            <ul>
+                
+                <li><a href="/">Home</a></li>
+                
+                <li><a href="/archives">Archives</a></li>
+                
+                <li><a href="/author">About</a></li>
+                
+            </ul>
+        </div>
+    </div>
+    <!-- Side End-->
+</div>
+
+  <!--content-->
+  
+<div class="content pure-g">
+    <div class=" pure-u-1">
+        <!-- A wrapper for all the blog posts start -->
+        <a href="#menu" id="menuLink" class="menu-link">
+    <span></span>
+</a>
+<div class="content-header">
+    <div id="content-header-nav" class="pure-menu pure-menu-open">
+        <ul>
+            <li><a href="http://thinkdo.github.io">森度</a></li>
+            
+            <li><a href="/">Home</a></li>
+            
+            <li><a href="/archives">Archives</a></li>
+            
+            <li><a href="/author">About</a></li>
+            
+        </ul>
+    </div>
+</div>
+
+        <div class="posts">
+            <h1 class="content-subhead"> Post </h1>
+
+            <!-- A single blog post start -->
+
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">ES6学习笔记</h2>
+              <p class="post-meta">
+    <time class="post-category post-category-design" datetime="2016-05-09T01:35:24.000Z" itemprop="datePublished">
+        2016-05-09
+    </time>
+    
+</p>
+            </header>
+            <div class="post-banner">
+            </div>
+            <div class="post-description">
+              <ul>
+<li>块级作用域let和const，其中const声明的变量不得改变值。</li>
+<li><p>解构赋值：从数组或对象中提取值，赋值到对应位置的变量，有点像批量赋值。比如<figure class="highlight javascript"><figcaption><span>let [a, b, c] = [1, 2, 3]  ```给abc分别赋值为1、2、3</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">+ 字符串新增的方法：</div><div class="line">  + 支持超出\uFFFF的unicode码点，用大括号将码点括起来即可；</div><div class="line">  + 新增方法codePointAt()</div><div class="line">  + 新增<span class="built_in">String</span>.fromCodePoint(<span class="number">0x20BB7</span>)用于返回码点对应的字符串，支持了超出\uFFFF的unicode码点。</div><div class="line">  + **<span class="keyword">for</span>**(<span class="keyword">let</span> a **<span class="keyword">of</span>** <span class="string">'who'</span>),<span class="keyword">for</span>...of语法用于遍历超出\uFFFF的unicode码点的字符串</div><div class="line">  + includes()、startsWith()、endsWith()</div><div class="line">  + <span class="string">'who'</span>.repeat(<span class="number">3</span>):重复三次who，结果为whowhowho</div><div class="line">  + 补全：<span class="string">'who'</span>.padStart(<span class="number">6</span>, <span class="string">'ab'</span>)结果为 <span class="string">'abawho'</span>，<span class="string">'who'</span>.padEnd(<span class="number">6</span>, <span class="string">'ab'</span>)结果为 <span class="string">'whoaba'</span></div><div class="line">  + 支持模板字符串</div><div class="line">+ 函数</div><div class="line">  + 增加了函数的默认值设置，如<span class="function"><span class="keyword">function</span>(<span class="params">x =<span class="number">9</span>,y</span>)</span></div><div class="line">  + <span class="title">rest</span>参数,比如:<span class="title">function</span> <span class="title">z</span>(<span class="params">a,...numbers</span>)，<span class="title">numbers</span>是一个数组类型的变量，但是调用<span class="title">z</span>函数时可以这样调用：<span class="title">let</span> <span class="title">a</span>=1;<span class="title">z</span>(<span class="params">a,<span class="number">2</span>,<span class="number">3</span></span>)；...<span class="title">numbers</span>必须是最后一个参数,即不能把<span class="title">a</span>放到...<span class="title">numbers</span>的后边</div><div class="line">  + 扩展运算符：调用一个多个入参的函数时，可以传入“...数组”的形式充当入参，...数组将转换为以逗号分隔的参数，扩展运算费使用的是<span class="title">for</span>...<span class="title">of</span>的方式将数组进行遍历的</div><div class="line">  比如：</div><div class="line">  ```<span class="title">javascript</span> </div><div class="line">  <span class="title">function</span> <span class="title">test</span>(<span class="params">a,b,c</span>)&#123;</div><div class="line">	<span class="keyword">return</span> a+b+c;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">let</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</div><div class="line">  <span class="built_in">console</span>.log(test(...numbers));<span class="comment">//打印出来是6</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li>箭头函数</li>
+<li>绑定this：::运算符会自动将左边的对象，作为上下文环境（即this对象），绑定到右边的函数上面。比如：x::y等同于y.bind(x)</li>
+</ul>
+</li>
+<li><p>对象</p>
+<ul>
+<li>对象的属性简写、方法名字简写</li>
+<li><p>对象的属性名、方法名可以是表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">   <span class="keyword">var</span> birth = <span class="string">'2000/01/01'</span>;</div><div class="line"><span class="keyword">let</span> propKey = <span class="string">'foo'</span>;</div><div class="line"><span class="keyword">var</span> Person = &#123;</div><div class="line">  <span class="attr">name</span>: <span class="string">'张三'</span>,</div><div class="line">  <span class="comment">//等同于birth: birth</span></div><div class="line">  birth,</div><div class="line">  <span class="comment">//等同于hello: function ()...</span></div><div class="line">  hello() &#123; <span class="built_in">console</span>.log(<span class="string">'我的名字是'</span>, <span class="keyword">this</span>.name); &#125;,</div><div class="line">  <span class="comment">//等同于foo:true,abc:123</span></div><div class="line">  [propKey]:<span class="literal">true</span>,</div><div class="line">  [<span class="string">'a'</span> + <span class="string">'bc'</span>]: <span class="number">123</span>,</div><div class="line">  <span class="comment">//方法名也可以是表达式</span></div><div class="line">  [<span class="string">'h'</span> + <span class="string">'ello'</span>]() &#123;</div><div class="line">	<span class="keyword">return</span> <span class="string">'hi'</span>;</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Object.is(a,b)</p>
+</li>
+<li>Object.assign(targetObject,srcObject1,srcObject2)</li>
+<li>遍历对象属性的方法：for…in、Object.keys(obj)、Object.getOwnPropertyNames(obj)、Object.getOwnPropertySymbols(obj)、Reflect.ownKeys(obj)</li>
+</ul>
+</li>
+<li>Symbol：新类型Symbol用于表示独一无二的属性名。let s = Symbol(‘s’);s.toString();不能与其他类型进行计算；</li>
+<li>数组<ul>
+<li>Array.from可以将类似于数组的对象转换为数组，也可以将set、map转换为数组</li>
+<li>Array.from(对象或集合，箭头函数用于过滤第一个参数的值)，比如<code>javascript Array.from([1,2,3],x=&gt;x.x)</code>，返回的值是1，4,9</li>
+</ul>
+</li>
+<li>Set、WeakSet</li>
+<li>Map，允许对象作为key存储到map中，当想批量往map中放入值时：可以通过构造函数传入入参，任何具有iterator接口的数据结构都可以作为数组构造函数的入参</li>
+<li>Proxy、Reflect</li>
+<li>Promise</li>
+<li>for…of循环可以使用的范围包括数组、Set 和 Map 结构、某些类似数组的对象（比如arguments对象、DOM NodeList 对象）、后文的 Generator 对象，以及字符串。</li>
+</ul>
+
+            </div>
+          </section>
+
+            <nav class="pagination" role="pagination">
+    
+    <a class="newer-posts" href="/2016/03/30/sublimeText3/">
+        ← 学会使用Sublime Text 3
+    </a>
+    
+    <span class="page-number">•</span>
+    
+    <a class="older-posts" href="/2016/06/30/http/">
+        http初步理解 →
+    </a>
+    
+</nav>
+            <div id="comment" class="comments-area">
+    <h1 class="title"><a href="#disqus_comments" name="disqus_comments">Comments</a></h1>
+
+    
+    <div id="ds-thread" class="ds-thread" data-thread-key="2016/05/09/ES6/" data-title="ES6学习笔记" data-url="http://thinkdo.github.io/2016/05/09/ES6/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"datoublog"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+    
+</div>
+            <!-- page-nav-start -->
+            <div class="clear" style="height: 25px;">&nbsp;</div>
+            <!-- A single blog post end -->
+        </div>
+
+        <!-- A wrapper for all the blog posts end -->
+        <div class="footer">
+    <p></p>
+</div>
+    </div>
+</div>
+
+</div>
+<!-- footer start -->
+<!-- Le javascript
+================================================== -->
+<!-- BASE JAVASCRIPT -->
+<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://www.thonatos.com/engine/wp-content/themes/Jure-v3/style/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://cdn.bootcss.com/highlight.js/8.1/highlight.min.js"></script>
+<!--<script src="/style/js/plugin/jquery.highlight/highlight.min.js"></script>-->
+<script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+<script src="http://cdn.bootcss.com/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+<!-- CUSTOM JAVASCRIPT -->
+<!-- PLUGIN JAVASCRIPT -->
+<script src="/js/app.js"></script>
+
+</body>
+</html>

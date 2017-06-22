@@ -110,10 +110,29 @@
               <h1 id="将本地项目上传到github上"><a href="#将本地项目上传到github上" class="headerlink" title="将本地项目上传到github上"></a>将本地项目上传到github上</h1><p>一、初始化为git目录<br>git init：进入到要初始化的目录下，执行该命令。git init执行后，表示当前目录已经成为一个git目录，会在当前目录下创建一个.git文件夹，该文件夹下存放的是版本历史记录文件。<br>git init bare：这个命令和git init类似，但不会在当前目录下生成.git文件夹，而是直接将版本历史记录文件放到了当前目录下，这就使得当前目录成为了一个裸仓库，不允许进行远端仓库的任何git操作。这样做的好处是避免这种冲突：用户A在远端仓库master分支下执行git操作，而同时用户B将本地版本提交到远端仓库的master分支，这时候就产生了冲突。</p>
 <p>二、添加本地文件至git目录下<br>git add myFloder：其中myFloder是我想放入到git项目中的文件夹名称，首先将myFloder拷贝到上述初始化的git目录下，执行add命令后会将myFloder及其子文件夹和文件都添加为一个git项目，会看到所有的文件夹和文件都打上了加号的图标。<br>git add myTest.java：添加单个文件则在后边直接跟文件名<br>git add *.java：支持文件名模糊匹配<br>git add .：表示将当前目录下的所有文件都添加进去。</p>
 <p>三、连接远程仓库<br>git remote add origin git@github.com:myGitHub/myReposity.git: 其中myGitHub为git的用户名，myReposity是项目名称</p>
-<p>四、添加项目到远程仓库上<br>git push -u origin master</p>
-<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>一、移除初始化<br>进入到初始化的目录，删除.git文件夹，或者执行命令rm -rf .git</p>
-<p>二、从已有的Git仓库克隆出一个新的镜像仓库<br>git clone git://github.com/myGitHub/myReposity.git mylocalRepository：该条命令表示将已有的github上的一个项目下载到本地，命名为mylocalRepository。</p>
-<p>三、提交代码到仓库中<br>git add .<br>git status<br>git commit -m  ‘提交注释’ </p>
+<p>四、添加项目到远程仓库上<br>git push -u origin master<br>git push -u origin master:branch</p>
+<h1 id="下载github的项目"><a href="#下载github的项目" class="headerlink" title="下载github的项目"></a>下载github的项目</h1><p>一、移除初始化<br>进入到初始化的目录，删除.git文件夹，或者执行命令rm -rf .git</p>
+<p>二、从已有的Git仓库克隆出一个新的镜像仓库<br>git clone git://github.com/myGitHub/myReposity.git mylocalRepository：该条命令表示将已有的github上的一个项目下载到本地，本地文件夹命名为mylocalRepository。<br>加-o test选型时，表示将clone下来的本地仓库命名为test，否则默认为origin</p>
+<h1 id="提交代码和更新代码"><a href="#提交代码和更新代码" class="headerlink" title="提交代码和更新代码"></a>提交代码和更新代码</h1><p>一、从远程仓库获取最新代码，但是不merge<br>git fetch origin</p>
+<p>二、从远程仓库获取最新代码，并且自动merge<br>git pull origin master</p>
+<p>三、提交代码到本地仓库中<br>git add .<br>git status<br>git commit -m  ‘提交注释’</p>
+<p>四、列出远程主机<br>git remote -v<br>git remote show test(只查看test主机的信息)<br>git remote add（添加一个远程主机）<br>git remote rm（删除一个远程主机）<br>git remote rename（更改一个远程主机名称）</p>
+<p>五、提交代码到远程仓库<br>git push origin master</p>
+<h1 id="本地分支"><a href="#本地分支" class="headerlink" title="本地分支"></a>本地分支</h1><p>一、创建分支<br>git branch test</p>
+<p>二、查看当前所在分支<br>git log –oneline –decorate</p>
+<p>三、切换分支<br>git checkout test</p>
+<p>四、代码合并<br>git checkout master<br>git merge test</p>
+<p>五、删除无用的分支<br>git branch -d test</p>
+<p>六、当不想merge的时候，想强制删除无用分支<br>git branch -D test</p>
+<h1 id="远程仓库分支"><a href="#远程仓库分支" class="headerlink" title="远程仓库分支"></a>远程仓库分支</h1><p>一、在远程仓库上增加分支<br>git branch localBranch<br>git checkout localBranch<br>git push origin localBranch:remoteBranch</p>
+<p>二、获取新分支<br>git fetch origin<br>如果有新分支，该命令会自动获取一个origin/remoteBranch的指向</p>
+<p>三、更新本地分支为最新代码,或者以远程分支为基础新建本地分支<br>git checkout -b localBranch origin/remoteBranch<br>git merge origin/remoteBranch</p>
+<p>四、将本地分支与远程分支联系起来<br>git branch -u origin/remoteBranch</p>
+<p>五、查看本地分支与远程分支的关系<br>git fetch –all;git branch -vv</p>
+<p>六、获取并merge分支<br>git pull</p>
+<p>七、删除远程分支<br>git push origin –delete remoteBranch</p>
+<h1 id="rebase"><a href="#rebase" class="headerlink" title="rebase"></a>rebase</h1><p>一、另一种方式：修改分支的指向<br>比如,让test以master的修改作为基础，将test的修改和master的修改合并，并使test指向到最新位置。<br>git checkout test<br>git rebase master<br>这时候，test已经指向了最新的位置，涵盖了master和test的所有修改，再移动master的指向就能达到master和test合并的目的了。<br>git checkout master<br>git merge test</p>
+<p>还有onto参数在多分支情况下可用：git rebase –onto master test1 test，具体请参考官方教程</p>
 
             </div>
           </section>
